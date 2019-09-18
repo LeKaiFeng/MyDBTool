@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="387.0" prefWidth="518.0" stylesheets="@../style.css" vgap="0"
+          xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="galaxis.lee.controller.ConfigDBController">
+
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="697.0" minHeight="170.0"/>
+        <RowConstraints maxHeight="422.0" minHeight="45.0"/>
+    </rowConstraints>
+    <children>
+        <TabPane fx:id="tabPane" prefHeight="390.0" prefWidth="622.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="TCP/IP">
+                    <content>
+                        <!-- <fx:include fx:id="XXX" source="XXX.fxml"/>-->
+                        <GridPane alignment="CENTER_RIGHT" prefHeight="361.0" prefWidth="625.0"
+                                  AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0"
+                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0"
+                                                   prefWidth="180.0"/>
+                                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="273.0" minWidth="15.0"
+                                                   prefWidth="38.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0"
+                                                   prefWidth="372.0"/>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0"
+                                                   prefWidth="123.0"/>
+                            </columnConstraints>
+                            <children>
+
+                                <Label text="数据库类型"/>
+                                <ChoiceBox fx:id="dbTypeChoice" prefWidth="150.0" GridPane.columnIndex="2">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="MySQL"/>
+                                            <String fx:value="(空)"/>
+                                        </FXCollections>
+                                    </items>
+                                    <value>
+                                        <String fx:value="MySQL"/>
+                                    </value>
+                                </ChoiceBox>
+                                <Label text="主机名或IP地址" GridPane.rowIndex="1"/>
+                                <TextField fx:id="hostField" text="127.0.0.1" GridPane.columnIndex="2"
+                                           GridPane.rowIndex="1"/>
+                                <Label text="端口号" GridPane.rowIndex="2"/>
+                                <TextField fx:id="portField" maxWidth="-Infinity" prefHeight="27.0" prefWidth="103.0"
+                                           text="3306" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                                <Label text="用户名" GridPane.rowIndex="3"/>
+                                <TextField fx:id="userNameField" minWidth="-Infinity" text="root"
+                                           GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                                <Label text="密码" GridPane.rowIndex="4"/>
+                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0"
+                                      GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                    <children>
+                                        <PasswordField fx:id="passwordField" text="admin"/>
+                                        <CheckBox fx:id="savePwdCheckBox" mnemonicParsing="false" text="Save password"
+                                                  visible="false"/>
+                                    </children>
+                                </HBox>
+                                <Label text="Schema/数据库" GridPane.rowIndex="5"/>
+                                <TextField fx:id="schemaField" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+                                <Label text="编码" GridPane.rowIndex="6"/>
+                                <ChoiceBox fx:id="encodingChoice" maxWidth="1.7976931348623157E308" prefHeight="26.0"
+                                           prefWidth="404.0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS"
+                                           GridPane.rowIndex="6">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="utf8"/>
+                                            <String fx:value="gb2312"/>
+                                            <String fx:value="gbk"/>
+                                        </FXCollections>
+                                    </items>
+                                    <value>
+                                        <String fx:value="utf8"/>
+                                    </value>
+                                </ChoiceBox>
+                            </children>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="47.0" minHeight="3.0" prefHeight="30.0"/>
+                                <RowConstraints maxHeight="39.0" minHeight="5.0" prefHeight="39.0"/>
+                                <RowConstraints maxHeight="40.0" minHeight="7.0" prefHeight="37.0"/>
+                                <RowConstraints maxHeight="65.0" minHeight="19.0" prefHeight="38.0"/>
+                                <RowConstraints maxHeight="95.0" minHeight="30.0" prefHeight="30.0"/>
+                                <RowConstraints maxHeight="34.0" minHeight="28.0" prefHeight="34.0"/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                        </GridPane>
+
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+        <AnchorPane style="-fx-background-color: lightGrey;" GridPane.rowIndex="1">
+            <children>
+
+                <Button layoutX="601.0" layoutY="15.0" mnemonicParsing="false" onAction="#cancel"
+                        style="-fx-border-color: transparent;" text="取消" visible="false" AnchorPane.bottomAnchor="15.0"
+                        AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                    <styleClass>
+                        <String fx:value="btn"/>
+                        <String fx:value="btn-default"/>
+                    </styleClass>
+                </Button>
+                <Button layoutX="220.0" layoutY="15.0" mnemonicParsing="false" onAction="#saveDBConfig"
+                        prefHeight="40.0" prefWidth="79.0" style="-fx-background-color: #449d44;" text="保存"
+                        textFill="WHITE" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="219.0">
+                    <styleClass>
+                        <String fx:value="btn-success"/>
+                        <String fx:value="btn"/>
+                    </styleClass>
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Button>
+
+            </children>
+        </AnchorPane>
+    </children>
+</GridPane>
