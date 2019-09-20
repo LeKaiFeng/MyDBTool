@@ -148,10 +148,4 @@ public class JunitTest {
             System.out.println("方法执行时间：" + (endTime - startTime) + "ms");
         }
     }
-
-    @Test
-    public void testSelect() {
-        con = ConnectionUtil.conDB();
-    }
-
 }

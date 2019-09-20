@@ -14,7 +14,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LeeApplication extends AbstractJavaFxApplicationSupport {
+    public class LeeApplication extends AbstractJavaFxApplicationSupport {
     //define your offsets here
     private double xOffset = 0;
     private double yOffset = 0;
@@ -31,7 +31,7 @@ public class LeeApplication extends AbstractJavaFxApplicationSupport {
         // //we gonna remove the borderless thingie.
         // stage.initStyle(StageStyle.DECORATED);
         // stage.setMaximized(false);
-        // stage.setTitle("小工具");
+        stage.setTitle("小工具");
         // //grab your root here
         // root.setOnMousePressed(new EventHandler<MouseEvent>() {
         //     @Override

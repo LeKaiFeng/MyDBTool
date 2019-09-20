@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="galaxis.lee.controller.SingleController">
+    <children>
+        <GridPane prefHeight="730.0" prefWidth="600.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="354.0" minWidth="10.0" prefWidth="311.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="0.0" prefWidth="19.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="405.0" minWidth="10.0" prefWidth="165.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="0.0" prefWidth="96.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="217.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="立体库总层数" />
+                <TextField fx:id="levelCount" prefHeight="32.0" prefWidth="139.0" GridPane.columnIndex="2" />
+                <Label text="每一层的巷道数" GridPane.rowIndex="1" />
+                <TextField fx:id="aiseCount" prefHeight="32.0" prefWidth="141.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label text="转弯板数量" textFill="RED" GridPane.rowIndex="2" />
+                <TextField fx:id="junCount" prefHeight="32.0" prefWidth="144.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label text="定位点之间的间距" GridPane.rowIndex="3" />
+                <TextField fx:id="posSpace" prefHeight="32.0" prefWidth="147.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Label text="巷道间距" GridPane.rowIndex="4" />
+                <TextField fx:id="aiseSpace" prefHeight="32.0" prefWidth="148.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label text="每一组定位点的个数" GridPane.rowIndex="5" />
+                <TextField fx:id="posCount" prefHeight="32.0" prefWidth="153.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Label text="第一块转弯板前定位点组数" GridPane.rowIndex="6" />
+                <TextField fx:id="beforeFirstBoard_posGroupCount" prefHeight="32.0" prefWidth="157.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Label text="第二块转弯板后定位点组数" textFill="RED" GridPane.rowIndex="8" />
+                <TextField fx:id="afterSecondBoard_posGroupCount" prefHeight="32.0" prefWidth="141.0" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <VBox alignment="CENTER" prefHeight="187.0" prefWidth="549.0" spacing="10.0" GridPane.columnSpan="4" GridPane.rowIndex="11">
+                    <children>
+                        <Button fx:id="parameterSave1" mnemonicParsing="false" prefHeight="43.0" prefWidth="276.0" styleClass="button2" text="巷道位置生成" textFill="RED" />
+                        <Button fx:id="parameterSave" mnemonicParsing="false" prefHeight="43.0" prefWidth="278.0" styleClass="button2" text="转弯板生成" />
+                        <Button fx:id="parameterSave2" mnemonicParsing="false" prefHeight="43.0" prefWidth="278.0" styleClass="button2" text="清空 position 表数据" />
+                        <Button fx:id="parameterSave22" mnemonicParsing="false" prefHeight="43.0" prefWidth="278.0" styleClass="button3" text="清空 location表数据" />
+                        <Button fx:id="parameterSave21" mnemonicParsing="false" prefHeight="43.0" prefWidth="278.0" styleClass="button2" text="货位生成" />
+                    </children>
+                </VBox>
+                <TextField fx:id="betweenFirstBoard_toSecondBoard_posCroupCount" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <TextField fx:id="boardCloser_posSpace" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <TextField fx:id="colWidth" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                <Label text="两块转弯板之间定位点组数" textFill="RED" GridPane.rowIndex="7" />
+                <Label text="距离转弯板最近的定位点之间的间距" GridPane.rowIndex="9" />
+                <Label text="定位点组之间的间距" GridPane.rowIndex="10" />
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

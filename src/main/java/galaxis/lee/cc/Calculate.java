@@ -10,9 +10,11 @@ import java.util.List;
  * @Date: Created in 14:47 2019/9/17
  */
 public class Calculate {
+
     //定位点生成2.0
     public  List<Position>  addPostion(Param param){
-        System.out.println(("定位点生成数据："+(2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace())));
+        param.setColWidth(param.getColWidth()-param.getPosSpace());
+        // System.out.println((2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
 
         List<Position> list = new ArrayList<Position>();
         for(int i=1;i<=param.getLevelCount();i++) {
@@ -29,7 +31,7 @@ public class Calculate {
                     if(param.getJunCount()>1) {
                         position.setJunction2(100*j+20);
                         position.setDirection2(2);
-                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace()));
+                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
                         position.setType2(4);
                     }else {
                         position.setJunction2(0);
@@ -51,7 +53,7 @@ public class Calculate {
                     if(param.getJunCount()>1) {
                         position.setJunction2(100*j+20);
                         position.setDirection2(2);
-                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace()));
+                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
                         position.setType2(4);
                     }else {
                         position.setJunction2(0);
@@ -68,13 +70,13 @@ public class Calculate {
                     position.setPos((100*j+10)*1000+100+10*((param.getBeforeFirstBoard_posGroupCount()+param.getBetweenFirstBoard_toSecondBoard_posCroupCount())*param.getPosCount()+m3+1));
                     position.setJunction(100*j+10);
                     position.setDirection(2);
-                    position.setDistance((2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace())+param.getBoardCloser_posSpace()+m3*param.getPosSpace()+param.getColWidth()*(m3/param.getPosCount()));
+                    position.setDistance((2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace())+param.getBoardCloser_posSpace()+m3*param.getPosSpace()+param.getColWidth()*(m3/param.getPosCount()));
                     position.setType(4);
                     position.setLift_area("A");
                     if(param.getJunCount()>1) {
                         position.setJunction2(100*j+20);
                         position.setDirection2(2);
-                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace()));
+                        position.setDistance2(position.getDistance()-(2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
                         position.setType2(4);
                     }else {
                         position.setJunction2(0);
@@ -127,6 +129,8 @@ public class Calculate {
     //计算转弯板位置
     public List<Position> getJunctionBoard(Param param) {
         List<Position> list =new ArrayList<Position>();
+        param.setColWidth(param.getColWidth()-param.getPosSpace());
+        System.out.println((2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
 
         for(int i=1;i <= param.getLevelCount();i++) {
             for(int j=1;j <= param.getAiseCount();j++) {
@@ -147,8 +151,8 @@ public class Calculate {
                     }else {
                         position.setDirection(2);
                         position.setJunction(100*j+10*(m-1));
-                        position.setDistance(2*param.getBoardCloser_posSpace()+(param.getBeforeFirstBoard_posGroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getAfterSecondBoard_posGroupCount()-1)*param.getPosSpace());
-                        position.setType(1);
+                        position.setDistance((2*param.getBoardCloser_posSpace()+(param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getColWidth()+(param.getPosCount()*param.getBetweenFirstBoard_toSecondBoard_posCroupCount()-1)*param.getPosSpace()));
+                        position.setType(4);
                         position.setLift_area("A");
                         position.setJunction2(20000);
                         position.setDirection2(4);
@@ -188,4 +192,7 @@ public class Calculate {
         }
         return li;
     }
+
+
 }
+

@@ -88,7 +88,7 @@ public class LoginController extends BaseFXController {
                 Stage stage = (Stage) node.getScene().getWindow();
                 //stage.setMaximized(true);
                 stage.close();
-                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/OnBoard.fxml")));
+                Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/fxml/OnBoard2.fxml")));
                 stage.setScene(scene);
                 stage.show();
 
