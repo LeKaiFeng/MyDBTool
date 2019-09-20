@@ -8,30 +8,13 @@ package galaxis.lee.controller;
 
 import de.felixroske.jfxsupport.FXMLController;
 import de.felixroske.jfxsupport.FXMLView;
-import galaxis.lee.LeeApplication;
-import galaxis.lee.cc.Calculate;
-import galaxis.lee.cc.Location;
-import galaxis.lee.cc.Position;
-import galaxis.lee.cc.positionService;
 import galaxis.lee.models.Param;
-import galaxis.lee.utils.ConnectionUtil;
-import galaxis.lee.utils.DialogBuilder;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Control;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
-import javafx.scene.input.MouseEvent;
 import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
@@ -40,7 +23,7 @@ import java.util.logging.Logger;
  * @Author: Lee
  * @Date: Created in 15:12 2019/9/20
  */
-@FXMLView(value = "/fxml/OnBoard2.fxml")
+@FXMLView(value = "/fxml/OnBoard.fxml")
 @FXMLController
 public class HomeController implements Initializable {
     private static final Logger logger = Logger.getLogger(HomeController.class.getName());
